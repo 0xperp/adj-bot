@@ -406,7 +406,7 @@ if __name__ == "__main__":
         use_research_summary_to_forecast=True,
         publish_reports_to_metaculus=True,
         folder_to_save_reports_to="forecasts",
-        skip_previously_forecasted_questions=False,
+        skip_previously_forecasted_questions=True,
         llms={  # choose your model names or GeneralLlm llms here, otherwise defaults will be chosen for you
             "default": GeneralLlm(
                 model="anthropic/claude-3-5-sonnet-20241022",
