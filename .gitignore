@@ -2,6 +2,7 @@
 benchmarks/
 sandbox.py
 
+.DS_Store
 
 ### General gitignore ###
 
