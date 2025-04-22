@@ -96,7 +96,7 @@ class TemplateForecaster(ForecastBot):
             You are an assistant to a superforecaster.
             The superforecaster will give you a question they intend to forecast on.
             To be a great assistant, you generate a concise but detailed rundown of the most relevant news, including if the question would resolve Yes or No based on current information.
-            You do not produce forecasts yourself.
+            You do not produce forecasts yourself but you should look at Metaculus, Kalshi, Polymarket, Good Judgment Open, Rand, and Infer forecasts to aide your research.
 
             Question:
             {question}
@@ -105,7 +105,7 @@ class TemplateForecaster(ForecastBot):
         if use_open_router:
             model_name = "openrouter/perplexity/sonar-reasoning"
         else:
-            model_name = "perplexity/sonar-pro"  # perplexity/sonar-reasoning and perplexity/sonar are cheaper, but do only 1 search
+            model_name = "perplexity/sonar-pro"  # paerplexity/sonar-reasoning and perplexity/sonar are cheaper, but do only 1 search
         model = GeneralLlm(
             model=model_name,
             temperature=0.1,
@@ -152,7 +152,6 @@ class TemplateForecaster(ForecastBot):
 
             {question.fine_print}
 
-
             Your research assistant says:
             {research}
 
@@ -192,14 +191,12 @@ class TemplateForecaster(ForecastBot):
 
             The options are: {question.options}
 
-
             Background:
             {question.background_info}
 
             {question.resolution_criteria}
 
             {question.fine_print}
-
 
             Your research assistant says:
             {research}
@@ -354,19 +351,19 @@ if __name__ == "__main__":
     template_bot = TemplateForecaster(
         research_reports_per_question=1,
         predictions_per_research_report=5,
-        use_research_summary_to_forecast=False,
+        use_research_summary_to_forecast=True,
         publish_reports_to_metaculus=True,
-        folder_to_save_reports_to=None,
-        skip_previously_forecasted_questions=True,
-        # llms={  # choose your model names or GeneralLlm llms here, otherwise defaults will be chosen for you
-        #     "default": GeneralLlm(
-        #         model="metaculus/anthropic/claude-3-5-sonnet-20241022",
-        #         temperature=0.3,
-        #         timeout=40,
-        #         allowed_tries=2,
-        #     ),
-        #     "summarizer": "openai/gpt-4o-mini",
-        # },
+        folder_to_save_reports_to="forecasts",
+        skip_previously_forecasted_questions=False,
+        llms={  # choose your model names or GeneralLlm llms here, otherwise defaults will be chosen for you
+            "default": GeneralLlm(
+                model="metaculus/anthropic/claude-3-5-sonnet-20241022",
+                temperature=0.3,
+                timeout=40,
+                allowed_tries=2,
+            ),
+            "summarizer": "openai/gpt-4o-mini",
+        },
     )
 
     if run_mode == "tournament":
