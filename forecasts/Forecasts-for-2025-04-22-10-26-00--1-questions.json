@@ -1,0 +1,175 @@
+[
+    {
+        "question": {
+            "question_text": "Will Kelsea Ballerini win an award at the 60th Academy of Country Music Awards?",
+            "id_of_post": 37018,
+            "page_url": "https://www.metaculus.com/questions/37018",
+            "id_of_question": 36413,
+            "state": "open",
+            "num_forecasters": 39,
+            "num_predictions": 42,
+            "resolution_criteria": "This question resolves as **Yes** if Kelsea Ballerini wins an award at the [60th Academy of Country Music Awards](https://en.wikipedia.org/wiki/60th_Academy_of_Country_Music_Awards).",
+            "fine_print": "",
+            "background_info": "The awards are scheduled to be held on May 8, 2025. Ballerini has 3 nominations.",
+            "unit_of_measure": "",
+            "close_time": "2025-04-22T10:00:00",
+            "actual_resolution_time": null,
+            "scheduled_resolution_time": "2025-05-09T00:00:00",
+            "published_time": "2025-04-22T08:00:00",
+            "open_time": "2025-04-22T08:00:00",
+            "date_accessed": "2025-04-22T10:25:41.216555",
+            "already_forecasted": false,
+            "tournament_slugs": [],
+            "includes_bots_in_aggregates": true,
+            "cp_reveal_time": "2025-04-22T10:00:00",
+            "api_json": {
+                "id": 37018,
+                "title": "Will Kelsea Ballerini win an award at the 60th Academy of Country Music Awards?",
+                "short_title": "",
+                "url_title": "",
+                "slug": "will-kelsea-ballerini-win-an-award-at-the-60th-academy-of-country-music-awards",
+                "author_id": 115975,
+                "author_username": "johnnycaffeine",
+                "coauthors": [],
+                "created_at": "2025-04-18T04:06:40.982707Z",
+                "published_at": "2025-04-22T08:00:00Z",
+                "edited_at": "2025-04-22T09:20:32.401883Z",
+                "curation_status": "approved",
+                "curation_status_updated_at": null,
+                "comment_count": 0,
+                "status": "open",
+                "resolved": false,
+                "actual_close_time": null,
+                "scheduled_close_time": "2025-04-22T10:00:00Z",
+                "scheduled_resolve_time": "2025-05-09T00:00:00Z",
+                "open_time": "2025-04-22T08:00:00Z",
+                "nr_forecasters": 39,
+                "projects": {
+                    "question_series": [
+                        {
+                            "id": 32721,
+                            "type": "question_series",
+                            "name": "Q2 AI Forecasting Benchmark Tournament",
+                            "slug": "aibq2",
+                            "header_image": "https://metaculus-web-media.s3.amazonaws.com/aib-q2-banner.webp",
+                            "prize_pool": "30000.00",
+                            "start_date": "2025-04-21T01:38:25Z",
+                            "close_date": "2025-07-11T18:43:55Z",
+                            "forecasting_end_date": null,
+                            "meta_description": "",
+                            "is_ongoing": true,
+                            "user_permission": null,
+                            "created_at": "2025-03-22T19:06:55.820092Z",
+                            "edited_at": "2025-04-22T08:38:56.951516Z",
+                            "score_type": "spot_peer_tournament",
+                            "default_permission": "viewer",
+                            "visibility": "not_in_main_feed",
+                            "is_current_content_translated": false
+                        }
+                    ],
+                    "default_project": {
+                        "id": 32721,
+                        "type": "question_series",
+                        "name": "Q2 AI Forecasting Benchmark Tournament",
+                        "slug": "aibq2",
+                        "header_image": "https://metaculus-web-media.s3.amazonaws.com/aib-q2-banner.webp",
+                        "prize_pool": "30000.00",
+                        "start_date": "2025-04-21T01:38:25Z",
+                        "close_date": "2025-07-11T18:43:55Z",
+                        "forecasting_end_date": null,
+                        "meta_description": "",
+                        "is_ongoing": true,
+                        "user_permission": null,
+                        "created_at": "2025-03-22T19:06:55.820092Z",
+                        "edited_at": "2025-04-22T08:38:56.951516Z",
+                        "score_type": "spot_peer_tournament",
+                        "default_permission": "viewer",
+                        "visibility": "not_in_main_feed",
+                        "is_current_content_translated": false
+                    }
+                },
+                "question": {
+                    "id": 36413,
+                    "title": "Will Kelsea Ballerini win an award at the 60th Academy of Country Music Awards?",
+                    "description": "The awards are scheduled to be held on May 8, 2025. Ballerini has 3 nominations.",
+                    "created_at": "2025-04-18T04:06:40.982707Z",
+                    "open_time": "2025-04-22T08:00:00Z",
+                    "cp_reveal_time": "2025-04-22T10:00:00Z",
+                    "spot_scoring_time": "2025-04-22T10:00:00Z",
+                    "scheduled_resolve_time": "2025-05-09T00:00:00Z",
+                    "actual_resolve_time": null,
+                    "resolution_set_time": null,
+                    "scheduled_close_time": "2025-04-22T10:00:00Z",
+                    "actual_close_time": "2025-04-22T10:00:00Z",
+                    "type": "binary",
+                    "options": null,
+                    "group_variable": "",
+                    "status": "open",
+                    "possibilities": null,
+                    "resolution": null,
+                    "include_bots_in_aggregates": true,
+                    "question_weight": 1.0,
+                    "resolution_criteria": "This question resolves as **Yes** if Kelsea Ballerini wins an award at the [60th Academy of Country Music Awards](https://en.wikipedia.org/wiki/60th_Academy_of_Country_Music_Awards).",
+                    "fine_print": "",
+                    "label": "",
+                    "unit": "",
+                    "open_upper_bound": false,
+                    "open_lower_bound": false,
+                    "inbound_outcome_count": null,
+                    "scaling": {
+                        "range_max": null,
+                        "range_min": null,
+                        "zero_point": null
+                    },
+                    "group_rank": null,
+                    "post_id": 37018,
+                    "aggregations": {
+                        "recency_weighted": {
+                            "history": [],
+                            "latest": null,
+                            "score_data": {}
+                        },
+                        "unweighted": {
+                            "history": [],
+                            "latest": null,
+                            "score_data": {}
+                        },
+                        "single_aggregation": {
+                            "history": [],
+                            "latest": null,
+                            "score_data": {}
+                        },
+                        "metaculus_prediction": {
+                            "history": [],
+                            "latest": null,
+                            "score_data": {}
+                        }
+                    },
+                    "nr_forecasters": 39,
+                    "my_forecasts": {
+                        "history": [],
+                        "latest": null,
+                        "score_data": {}
+                    }
+                },
+                "user_permission": "forecaster",
+                "vote": {
+                    "score": 0,
+                    "user_vote": null
+                },
+                "forecasts_count": 42,
+                "unread_comment_count": 0,
+                "last_viewed_at": "2025-04-22T09:23:20.432160Z",
+                "key_factors": [],
+                "is_current_content_translated": false
+            },
+            "community_prediction_at_access_time": null
+        },
+        "explanation": "\n# SUMMARY\n*Question*: Will Kelsea Ballerini win an award at the 60th Academy of Country Music Awards?\n*Final Prediction*: 38.0%\n*Total Cost*: $0.06\n*Time Spent*: 0.31 minutes\n\n\n## Report 1 Summary\n### Forecasts\n*Forecaster 1*: 35.0%\n*Forecaster 2*: 38.0%\n*Forecaster 3*: 38.0%\n*Forecaster 4*: 45.0%\n*Forecaster 5*: 35.0%\n\n\n### Research Summary\nBased on the provided market data, here's a concise rundown of the relevant information:\n\nKey Information:\n- The 60th Academy of Country Music Awards will be held on May 8, 2025\n- Kelsea Ballerini has 3 nominations\n\nMarket Probabilities:\n- Metaculus: No probability shown (new market)\n- Kalshi markets show:\n- 32% chance for Female Artist of the Year\n- 0% chance for Entertainer of the Year\n- No other specific markets for Ballerini's other potential categories\n\nNotable Competitors (Female Artist of the Year):\n- Kacey Musgraves (9% on Kalshi)\n- Ella Langley (8% on Kalshi)\n\nCurrent Resolution Status: The question would not resolve yet as the awards ceremony has not taken place.\n\nTrading Volume/Interest:\n- Highest volume is in the Female Artist of the Year category on Kalshi with:\n- 2,281 volume\n- 1,369 open interest for Ballerini's market\n\nThe markets suggest Ballerini has her best chance in the Female Artist of the Year category, though specific probabilities for her other nominations are not shown in the provided data.\n\n\n# RESEARCH\n## Report 1 Research\nBased on the provided market data, here's a concise rundown of the relevant information:\n\nKey Information:\n- The 60th Academy of Country Music Awards will be held on May 8, 2025\n- Kelsea Ballerini has 3 nominations\n\nMarket Probabilities:\n- Metaculus: No probability shown (new market)\n- Kalshi markets show:\n- 32% chance for Female Artist of the Year\n- 0% chance for Entertainer of the Year\n- No other specific markets for Ballerini's other potential categories\n\nNotable Competitors (Female Artist of the Year):\n- Kacey Musgraves (9% on Kalshi)\n- Ella Langley (8% on Kalshi)\n\nCurrent Resolution Status: The question would not resolve yet as the awards ceremony has not taken place.\n\nTrading Volume/Interest:\n- Highest volume is in the Female Artist of the Year category on Kalshi with:\n- 2,281 volume\n- 1,369 open interest for Ballerini's market\n\nThe markets suggest Ballerini has her best chance in the Female Artist of the Year category, though specific probabilities for her other nominations are not shown in the provided data.\n\n\n# FORECASTS\n\n## R1: Forecaster 1 Reasoning\nLet me structure this response:\n\n(a) Time until outcome: 16 days (from April 22, 2025 to May 8, 2025)\n\n(b) Status quo outcome: No award wins, as winning an award is generally harder than being nominated\n\n(c) No scenario: Despite her 3 nominations, Ballerini faces strong competition in each category and doesn't secure enough votes from ACM members to win any award, similar to previous years where artists with multiple nominations went home empty-handed\n\n(d) Yes scenario: Ballerini wins Female Artist of the Year, where markets suggest she has her strongest chance (32%), possibly due to strong performance in the past year and industry support\n\nRationale:\n- The short time frame (16 days) means we have most of the relevant information already\n- The status quo in awards shows is that most nominees don't win\n- Having 3 nominations increases her chances, as she has multiple paths to victory\n- The 32% market probability for Female Artist of the Year seems well-informed given the trading volume\n- The fact that she has no chance in Entertainer of the Year suggests limits to her current industry position\n- Multiple nominations often indicate strong industry support, but don't guarantee wins\n- Status quo bias suggests we should be somewhat conservative in estimating her chances\n- Given 3 nominations and one strong category (32%), but accounting for status quo bias and correlation between categories, I estimate her overall chances as slightly higher than her best single-category chance\n\nProbability: 35%\n\n\n## R1: Forecaster 2 Reasoning\nLet me break this down:\n\n(a) Time until outcome: 16 days (from April 22, 2025 to May 8, 2025)\n\n(b) Status quo outcome: No award win, as winning an award is generally harder than not winning one, especially given strong competition in country music\n\n(c) No scenario: Despite her 3 nominations, Ballerini faces tough competition in each category and doesn't secure enough votes from ACM members, continuing her previous pattern of nominations without wins\n\n(d) Yes scenario: Ballerini wins Female Artist of the Year, where she appears to have the strongest chance (32% according to Kalshi), possibly benefiting from vote splitting among other nominees\n\nRationale:\n- The 32% chance in Female Artist of the Year category appears to be her best opportunity\n- Having 3 nominations gives her multiple paths to victory, which increases her overall chances\n- However, the status quo in award shows tends to favor established patterns and previous winners\n- The Kalshi market showing 0% for Entertainer of the Year suggests at least one category is very unlikely\n- The relatively high trading volume (2,281) and open interest (1,369) in her Female Artist category suggests the market is fairly efficient\n- Multiple independent chances (3 nominations) means her overall probability should be higher than her best single-category probability\n- Given the status quo bias and market data, while acknowledging multiple paths to victory, I would place her overall chances slightly above her best single-category probability\n\nProbability: 38%\n\n\n## R1: Forecaster 3 Reasoning\nLet me structure this response:\n\n(a) Time until outcome: 16 days (from April 22, 2025 to May 8, 2025)\n\n(b) Status quo outcome: No award win, as winning an award is generally more difficult than not winning one, especially given strong competition in country music\n\n(c) No scenario: Despite her 3 nominations, Ballerini faces tough competition in each category and doesn't secure enough votes from ACM members, continuing her previous pattern of nominations without wins\n\n(d) Yes scenario: Ballerini wins Female Artist of the Year, where she appears to have her strongest chance (32% according to Kalshi), possibly due to a strong year of performances and releases\n\nRationale:\n- The 32% chance in Female Artist of the Year category from Kalshi provides a meaningful baseline\n- Having 3 nominations increases her chances as she has multiple paths to victory\n- However, the status quo in awards shows is that most nominees don't win\n- The market data shows she's not favored in Entertainer of the Year (0%)\n- We don't have data on her third category, but can assume it's not significantly higher than her Female Artist chances\n- The relatively high trading volume suggests the 32% probability is well-calibrated\n- Considering all three nominations together, while respecting that the status quo favors no wins, I'll place her overall chances slightly higher than her best single-category chance\n\nProbability: 38%\n\n\n## R1: Forecaster 4 Reasoning\nLet me break this down:\n\n(a) Time until outcome: 16 days (from April 22, 2025 to May 8, 2025)\n\n(b) Status quo outcome: No award win, as historically most nominees don't win in their categories, and having multiple nominations doesn't guarantee a win\n\n(c) No scenario: Despite her three nominations, stronger competitors or more popular artists win in each category she's nominated in, similar to previous years where multiple nominations didn't translate to wins\n\n(d) Yes scenario: Ballerini wins Female Artist of the Year, where markets suggest she has her strongest chance (32% according to Kalshi)\n\nRationale:\n- The short timeframe (16 days) means there's little time for dramatic changes in momentum or popularity\n- Market data suggests she's the frontrunner for Female Artist of the Year at 32%, significantly ahead of shown competitors\n- However, having 3 nominations actually provides three separate chances to win, which increases overall probability\n- The status quo bias suggests we shouldn't be too optimistic, as most nominees don't win\n- But her multiple nominations and market-leading position in at least one category provide meaningful support for a potential win\n- The 32% chance in just one category suggests the overall probability across all three nominations should be higher\n- However, nominations may be correlated (if she's unpopular with voters in one category, likely similar in others)\n\nConsidering these factors, I would place the probability higher than her single-category odds but not dramatically so, as the status quo of \"no win\" remains a strong possibility.\n\nProbability: 45%\n\n\n## R1: Forecaster 5 Reasoning\nLet me break this down:\n\n(a) Time until outcome: 16 days (from April 22, 2025 to May 8, 2025)\n\n(b) Status quo outcome: No award win, as winning an award is generally harder than not winning one, especially given strong competition in country music\n\n(c) No scenario: Despite her 3 nominations, Ballerini faces tough competition in each category and doesn't secure enough votes from ACM members, particularly in her strongest category (Female Artist of the Year) where she's competing against established artists like Kacey Musgraves\n\n(d) Yes scenario: Ballerini wins Female Artist of the Year category where she currently has the highest implied probability (32% according to Kalshi), possibly benefiting from vote splitting among other nominees\n\nRationale:\n- The market data suggests Ballerini has a reasonable chance in at least one category (32% for Female Artist of the Year)\n- Having 3 nominations increases her chances as she has multiple paths to victory\n- However, the status quo suggests award wins are difficult, and most nominees don't win\n- The Kalshi market showing 32% for her strongest category is likely the best indicator we have\n- Multiple nominations slightly increase the overall probability above her strongest single category\n- Given the status quo bias and the difficulty of winning awards, but accounting for multiple nominations, I would place the probability slightly above her strongest single category odds\n\nProbability: 35%\n\n",
+        "other_notes": null,
+        "price_estimate": 0.05535,
+        "minutes_taken": 0.3056607484817505,
+        "errors": [],
+        "prediction": 0.38
+    }
+]

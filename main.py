@@ -4,6 +4,9 @@ import logging
 import os
 from datetime import datetime
 from typing import Literal
+import urllib.parse
+import aiohttp
+import json
 
 from forecasting_tools import (
     AskNewsSearcher,
@@ -23,7 +26,6 @@ from forecasting_tools import (
 )
 
 logger = logging.getLogger(__name__)
-
 
 class TemplateForecaster(ForecastBot):
     """
@@ -58,7 +60,7 @@ class TemplateForecaster(ForecastBot):
     Additionally OpenRouter has large rate limits immediately on account creation
     """
 
-    _max_concurrent_questions = 2  # Set this to whatever works for your search-provider/ai-model rate limits
+    _max_concurrent_questions = 1  # Set this to whatever works for your search-provider/ai-model rate limits
     _concurrency_limiter = asyncio.Semaphore(_max_concurrent_questions)
 
     async def run_research(self, question: MetaculusQuestion) -> str:
@@ -70,6 +72,10 @@ class TemplateForecaster(ForecastBot):
                 )
             elif os.getenv("EXA_API_KEY"):
                 research = await self._call_exa_smart_searcher(
+                    question.question_text
+                )
+            elif os.getenv("ADJACENT_API_KEY"):
+                research = await self._call_adjacent_researcher(
                     question.question_text
                 )
             elif os.getenv("PERPLEXITY_API_KEY"):
@@ -132,6 +138,53 @@ class TemplateForecaster(ForecastBot):
         )  # You can ask the searcher to filter by date, exclude/include a domain, and run specific searches for finding sources vs finding highlights within a source
         response = await searcher.invoke(prompt)
         return response
+    
+    async def _call_adjacent_researcher(self, question: str) -> str:
+        """
+        Makes a request to the Adjacent News API to get relevant market data and news
+        """
+        api_key = os.getenv("ADJACENT_API_KEY")
+        if not api_key:
+            raise ValueError("ADJACENT_API_KEY environment variable not set")
+
+        encoded_question = urllib.parse.quote(question)
+        url = f"https://api.data.adj.news/api/search/query?q={encoded_question}&limit=10&include_context=true&api_key={api_key}"
+
+        async with aiohttp.ClientSession() as session:
+            async with session.get(url) as response:
+                if response.status != 200:
+                    raise Exception(f"Adjacent API returned status {response.status}")
+                data = await response.json()
+
+        if not data.get("data"):
+            return "No relevant market data found"
+
+        # Get related news for the first market ticker
+        # news_data = {}
+        # if data["data"] and len(data["data"]) > 0 and "adj_ticker" in data["data"][0]:
+        #     ticker = data["data"][0]["adj_ticker"]
+        #     news_url = f"https://api.data.adj.news/api/news/{ticker}?days=7&limit=5&api_key={api_key}"
+            
+        #     async with aiohttp.ClientSession() as session:
+        #         async with session.get(news_url) as response:
+        #             if response.status == 200:
+        #                 news_data = await response.json()
+
+        # Format the market data and news into a research summary
+        prompt = (
+            "You are an assistant to a superforecaster. Below is market data from prediction markets "
+            "and news sources related to the question, along with recent relevant news from the past week. "
+            "Please include the platform for each forecast. Please generate a concise but detailed rundown "
+            "of the most relevant information, including if the question would resolve Yes or No based "
+            "on current information. Do not produce forecasts yourself.\n\n"
+            f"Question: {question}\n\n"
+            f"Market Data: {json.dumps(data['data'], indent=2)}\n\n"
+            # f"Recent Related News: {json.dumps(news_data, indent=2)}"
+        )
+
+        model = self.get_llm("default", "llm")
+        response = await model.invoke(prompt)
+        return response
 
     async def _run_forecast_on_binary(
         self, question: BinaryQuestion, research: str
@@ -145,7 +198,6 @@ class TemplateForecaster(ForecastBot):
 
             Question background:
             {question.background_info}
-
 
             This question's outcome will be determined by the specific criteria below. These criteria have not yet been satisfied:
             {question.resolution_criteria}
@@ -357,12 +409,12 @@ if __name__ == "__main__":
         skip_previously_forecasted_questions=False,
         llms={  # choose your model names or GeneralLlm llms here, otherwise defaults will be chosen for you
             "default": GeneralLlm(
-                model="metaculus/anthropic/claude-3-5-sonnet-20241022",
+                model="anthropic/claude-3-5-sonnet-20241022",
                 temperature=0.3,
                 timeout=40,
                 allowed_tries=2,
             ),
-            "summarizer": "openai/gpt-4o-mini",
+            "summarizer": "anthropic/claude-3-5-sonnet-20241022",
         },
     )
 
@@ -384,9 +436,10 @@ if __name__ == "__main__":
     elif run_mode == "test_questions":
         # Example questions are a good way to test the bot's performance on a single question
         EXAMPLE_QUESTIONS = [
-            "https://www.metaculus.com/questions/578/human-extinction-by-2100/",  # Human Extinction - Binary
-            "https://www.metaculus.com/questions/14333/age-of-oldest-human-as-of-2100/",  # Age of Oldest Human - Numeric
-            "https://www.metaculus.com/questions/22427/number-of-new-leading-ai-labs/",  # Number of New Leading AI Labs - Multiple Choice
+            # "https://www.metaculus.com/questions/578/human-extinction-by-2100/",  # Human Extinction - Binary
+            "https://www.metaculus.com/questions/36248/who-will-be-the-first-to-leave-the-trump-cabinet/", # example adjacent community question
+            # "https://www.metaculus.com/questions/14333/age-of-oldest-human-as-of-2100/",  # Age of Oldest Human - Numeric
+            # "https://www.metaculus.com/questions/22427/number-of-new-leading-ai-labs/",  # Number of New Leading AI Labs - Multiple Choice
         ]
         template_bot.skip_previously_forecasted_questions = False
         questions = [

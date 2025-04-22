@@ -15,7 +15,8 @@ numpy = "^1.26.0"
 openai = "^1.57.4"
 python-dotenv = "^1.0.1"
 forecasting-tools = "^0.2.23"
-
+aiohttp = "^3.9.3"
+urllib3 = "^2.2.1"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"
@@ -23,4 +24,3 @@ ipykernel = "^6.29.5"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
